@@ -16,6 +16,10 @@ class App extends React.Component {
       name: true,
     };
     this.filterName = this.filterName.bind(this);
+    this.filterCountry = this.filterCountry.bind(this);
+    this.filterCompany = this.filterCompany.bind(this);
+    this.filterDepartment = this.filterDepartment.bind(this);
+    this.filterAdmissionDate = this.filterAdmissionDate.bind(this);
   }
 
   async componentDidMount() {
@@ -43,9 +47,61 @@ class App extends React.Component {
   }
 
   filterName() {
+    let listSort = this.state.data;
+    listSort.sort(function compare(a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+
     this.setState({
-      selectedName: !this.state.name,
-      name: !this.state.name,
+      data: listSort,
+    });
+    console.log("state atual app");
+    console.log(this.state);
+  }
+  filterCountry() {
+    let listSort = this.state.data;
+    listSort.sort(function compare(a, b) {
+      if (a.country < b.country) return -1;
+      if (a.country > b.country) return 1;
+      return 0;
+    });
+    this.setState({
+      data: listSort,
+    });
+  }
+  filterCompany() {
+    let listSort = this.state.data;
+    listSort.sort(function compare(a, b) {
+      if (a.company < b.company) return -1;
+      if (a.company > b.company) return 1;
+      return 0;
+    });
+    this.setState({
+      data: listSort,
+    });
+  }
+  filterDepartment() {
+    let listSort = this.state.data;
+    listSort.sort(function compare(a, b) {
+      if (a.department < b.department) return -1;
+      if (a.department > b.department) return 1;
+      return 0;
+    });
+    this.setState({
+      data: listSort,
+    });
+  }
+  filterAdmissionDate() {
+    let listSort = this.state.data;
+    listSort.sort(function compare(a, b) {
+      if (a.admissionDate < b.admissionDate) return -1;
+      if (a.admissionDate > b.admissionDate) return 1;
+      return 0;
+    });
+    this.setState({
+      data: listSort,
     });
   }
 
@@ -53,11 +109,18 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Topbar />
-        <Filters filterName={this.filterName} />
+        <Filters
+          filterName={this.filterName}
+          filterCountry={this.filterCountry}
+          filterCompany={this.filterCompany}
+          filterDepartment={this.filterDepartment}
+          filterAdmissionDate={this.filterAdmissionDate}
+        />
         <div className="container">
           <section className="contacts">
             <Contact />
-            {this.renderContacts()}
+            <Contacts contacts={this.state.data} />
+            {/* {this.renderContacts()} */}
           </section>
         </div>
       </React.Fragment>
