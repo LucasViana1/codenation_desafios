@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      baseUrl: "https://5e82ac6c78337f00160ae496.mockapi.io/api/v1/contacts",
+      baseUrl:
+        "https://5e82ac6c78337f00160ae496.mockapi.io/api/v1/contacts?search=",
       data: [],
       name: true,
     };
@@ -20,26 +21,28 @@ class App extends React.Component {
     this.filterCompany = this.filterCompany.bind(this);
     this.filterDepartment = this.filterDepartment.bind(this);
     this.filterAdmissionDate = this.filterAdmissionDate.bind(this);
+    this.filterAdmissionDate = this.filterAdmissionDate.bind(this);
+    this.search = this.search.bind(this);
   }
 
   async componentDidMount() {
     await this.getContacts();
-    console.log("state");
-    console.log(this.state);
   }
 
-  async getContacts() {
-    const data = await fetch(this.state.baseUrl, {
+  async getContacts(wordKey = "") {
+    const data = await fetch(this.state.baseUrl + wordKey, {
       method: "GET",
     }).then((resp) => resp.json());
     this.setState({ data });
-    console.log("get contatos");
-    console.log(this.state);
+  }
+
+  async search(wordKey) {
+    if (wordKey !== "") wordKey = wordKey[0].toUpperCase() + wordKey.slice(1);
+
+    await this.getContacts(wordKey);
   }
 
   renderContacts() {
-    console.log("render");
-    console.log(this.state);
     let listContacts = this.state.data.map((item) => {
       return <Contacts contacts={item} />;
     });
@@ -57,8 +60,6 @@ class App extends React.Component {
     this.setState({
       data: listSort,
     });
-    console.log("state atual app");
-    console.log(this.state);
   }
   filterCountry() {
     let listSort = this.state.data;
@@ -115,12 +116,12 @@ class App extends React.Component {
           filterCompany={this.filterCompany}
           filterDepartment={this.filterDepartment}
           filterAdmissionDate={this.filterAdmissionDate}
+          search={this.search}
         />
         <div className="container">
           <section className="contacts">
             <Contact />
             <Contacts contacts={this.state.data} />
-            {/* {this.renderContacts()} */}
           </section>
         </div>
       </React.Fragment>

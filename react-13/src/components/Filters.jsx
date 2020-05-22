@@ -12,6 +12,10 @@ class Filters extends React.Component {
     };
   }
 
+  searching(e) {
+    this.props.search(e.target.value);
+  }
+
   handleClass(e, option) {
     this.setState({
       nameIsSelected: option === "name" ? true : false,
@@ -20,7 +24,6 @@ class Filters extends React.Component {
       departmentIsSelected: option === "department" ? true : false,
       admissionDateIsSelected: option === "admissionDate" ? true : false,
     });
-    console.log("muda class");
     if (option === "name") this.props.filterName();
     if (option === "country") this.props.filterCountry();
     if (option === "company") this.props.filterCompany();
@@ -36,6 +39,7 @@ class Filters extends React.Component {
               type="text"
               className="filters__search__input"
               placeholder="Pesquisar"
+              onChange={(e) => this.searching(e)}
             />
 
             <button className="filters__search__icon">
