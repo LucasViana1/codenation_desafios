@@ -4,7 +4,6 @@ import "./App.scss";
 
 import Topbar from "./components/Topbar";
 import Filters from "./components/Filters";
-import Contact from "./components/Contact";
 import Contacts from "./components/Contacts";
 
 class App extends React.Component {
@@ -120,7 +119,7 @@ class App extends React.Component {
         />
         <div className="container">
           <section className="contacts">
-            <Contact />
+            {/* <Contact /> */}
             <Contacts contacts={this.state.data} />
           </section>
         </div>
