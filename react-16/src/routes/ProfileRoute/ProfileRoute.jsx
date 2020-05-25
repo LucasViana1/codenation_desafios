@@ -43,8 +43,8 @@ const ProfileRoute = () => {
         name={userInfo.name}
         username={userInfo.username}
       />
-      <UserPosts posts={userPost} />
-      {/* <UserPosts posts={userPost} user={userInfo} /> */}
+      {/* <UserPosts posts={userPost} /> */}
+      <UserPosts posts={userPost} user={userInfo} />
     </div>
   );
 };

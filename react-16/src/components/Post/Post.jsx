@@ -9,6 +9,9 @@ const Post = ({ postInfo, userInfo }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [like, setLike] = useState(false);
 
+  const { comments, imageUrl, likes } = postInfo;
+  const { avatar, name } = userInfo;
+
   const following = () => {
     setIsFollowing(!isFollowing);
   };
@@ -18,17 +21,17 @@ const Post = ({ postInfo, userInfo }) => {
 
   return (
     <article className="post" data-testid="post">
+      {console.log("likes and comments component filho")}
+      {console.log(likes)}
+      {console.log(comments)}
       <div className="post__header">
         <div className="post__header--user">
           <div className="user">
             <a className="user__thumb" href="/">
-              <img
-                src="https://viniciusvinna.netlify.app/assets//api-instagram/profiles/black-panther/black-panther-profile.jpg"
-                alt="T'Challa"
-              />
+              <img src={avatar} alt={name} />
             </a>
             <a className="user__name" href="/">
-              T'Challa
+              {name}
             </a>
           </div>
           <button className="post__context">
@@ -41,10 +44,7 @@ const Post = ({ postInfo, userInfo }) => {
           </button>
         </div>
         <div className="post__figure">
-          <img
-            src="https://viniciusvinna.netlify.app/assets//api-instagram/profiles/black-panther/black-panther-1.jpg"
-            alt=""
-          />
+          <img src={imageUrl} alt={name} />
         </div>
         <nav className="post__controls">
           <button onClick={(e) => liking()}>
