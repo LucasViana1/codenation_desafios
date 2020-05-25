@@ -1,15 +1,19 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import Topbar from '../../components/Topbar';
+import Topbar from "../../components/Topbar";
 
-import Routes from '../../routes';
+import Routes from "../../routes";
 
-import './App.scss';
+import "./App.scss";
 
 const App = () => (
-  <div>
-  </div>
+  <BrowserRouter>
+    <div data-testid="app">
+      <Topbar />
+      <Routes />
+    </div>
+  </BrowserRouter>
 );
 
 export default App;

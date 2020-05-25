@@ -1,1 +1,46 @@
-v12.10.0
+
+> instadev@0.1.0 submit C:\Users\Lucas Viana\codenation\react-15
+> react-scripts test src/__tests__/submit.test.js --reporters=default --reporters=jest-junit "--watchAll=false"
+
+  console.log src/containers/Stories/Stories.jsx:11
+    stories container
+
+  console.log src/containers/Stories/Stories.jsx:12
+    undefined
+
+  console.log src/containers/Stories/Stories.jsx:13
+    undefined
+
+  console.log src/containers/Stories/Stories.jsx:11
+    stories container
+
+  console.log src/containers/Stories/Stories.jsx:12
+    []
+
+  console.log src/containers/Stories/Stories.jsx:13
+    undefined
+
+  console.error node_modules/prop-types/checkPropTypes.js:20
+    Warning: Failed prop type: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+        in input (at UserForm.jsx:35)
+        in div (at UserForm.jsx:33)
+        in div (at UserForm.jsx:32)
+        in section (at UserForm.jsx:31)
+        in UserForm (at submit.test.js:163)
+        in Router (at submit.test.js:162)
+
+  console.log src/containers/UserPosts/UserPosts.jsx:10
+    posts user component
+
+  console.log src/containers/UserPosts/UserPosts.jsx:11
+    []
+
+  console.log src/containers/UserProfile/UserProfile.jsx:19
+    
+
+  console.log src/containers/UserProfile/UserProfile.jsx:20
+    
+
+  console.log src/containers/UserProfile/UserProfile.jsx:21
+    
+

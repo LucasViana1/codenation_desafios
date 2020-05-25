@@ -9,9 +9,10 @@ import "./FeedRoute.scss";
 
 const FeedRoute = () => {
   return (
-    <div>
+    <div data-testid="feed-route">
       <Stories />
       <Posts />
+      {/* <Loading /> */}
     </div>
   );
 };

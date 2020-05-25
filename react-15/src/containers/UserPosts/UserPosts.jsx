@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import Post from '../../components/Post';
+import Post from "../../components/Post";
 
-import './UserPosts.scss';
+import "./UserPosts.scss";
 
-const UserPosts = ({ posts }) => (
-  <div className="container">
-  </div>
-);
+const UserPosts = ({ posts }) => {
+  return (
+    <div className="container" data-testid="user-posts">
+      {console.log("posts user component")}
+      {console.log(posts)}
+      {/* SERA UM ARRAY FUTURAMENTE */}
+      <Post postInfo={posts} userInfo={{}} />
+    </div>
+  );
+};
 
 export default UserPosts;

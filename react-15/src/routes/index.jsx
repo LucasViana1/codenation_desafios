@@ -10,11 +10,11 @@ const Routes = () => (
   <Switch>
     <Route exact path="/" component={FeedRoute}></Route>
 
-    <Route exact path="/users"></Route>
+    <Route exact path="/users" component={UsersRoute}></Route>
 
-    <Route path="/users/:username"></Route>
+    <Route path="/users/:username" component={ProfileRoute}></Route>
 
-    <Route path="/newuser"></Route>
+    <Route path="/newuser" component={NewUserRoute}></Route>
   </Switch>
 );
 
