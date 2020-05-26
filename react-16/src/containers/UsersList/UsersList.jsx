@@ -6,9 +6,6 @@ import Loading from "../../components/Loading";
 import "./UsersList.scss";
 
 const UsersList = ({ users }) => {
-  console.log("users _________");
-  console.log(users);
-
   return (
     <section className="users-list" data-testid="users-list">
       {users.length > 0 ? (

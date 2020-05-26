@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 
 import "./Post.scss";
 
-// POSTS DEVE VARIAR PARA O FEED E PARA UM USER ESPECIFICO
-
 const Post = ({ postInfo, userInfo }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [like, setLike] = useState(false);
 
-  const { comments, imageUrl, likes } = postInfo;
+  const { comments, imageUrl } = postInfo;
   const { avatar, name } = userInfo;
 
   const following = () => {
@@ -21,9 +19,6 @@ const Post = ({ postInfo, userInfo }) => {
 
   return (
     <article className="post" data-testid="post">
-      {console.log("likes and comments component filho")}
-      {console.log(likes)}
-      {console.log(comments)}
       <div className="post__header">
         <div className="post__header--user">
           <div className="user">
@@ -56,11 +51,16 @@ const Post = ({ postInfo, userInfo }) => {
           </button>
           <div className="post__status">
             <div className="user">
-              <span>
-                curtido por <a href="/">Santino Rowe</a>
-                <span> e outra </span>
-                <a href="/">1 pessoas</a>
-              </span>
+              {comments.length > 0 && (
+                <span>
+                  curtido por <Link to="/">{comments[0].name}</Link>
+                  <span> e outra{comments.length + like > 2 ? "s " : " "}</span>
+                  <Link to="/">
+                    {comments.length + like - 1} pessoa
+                    {comments.length + like > 2 ? "s " : " "}
+                  </Link>
+                </span>
+              )}
             </div>
           </div>
         </nav>

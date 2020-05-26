@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Post from "../../components/Post";
 
-const Posts = ({ posts, getUserHandler }) => {
-  return (
-    <div className="container" data-testid="posts">
-      {console.log("posts filho")}
-      {console.log(posts)}
-      <section className="feed">
-        <Post />
-      </section>
-    </div>
-  );
-};
+const Posts = ({ posts, getUserHandler }) => (
+  <div className="container" data-testid="posts">
+    <section className="feed">
+      {posts.length > 0 &&
+        posts.map((post) => (
+          <Post
+            postInfo={post}
+            userInfo={getUserHandler(post.userId)}
+            key={post.id}
+          />
+        ))}
+    </section>
+  </div>
+);
+
 export default Posts;

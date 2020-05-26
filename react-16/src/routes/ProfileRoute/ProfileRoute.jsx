@@ -22,8 +22,7 @@ const ProfileRoute = () => {
     const data = await fetch(`${BASE_URL}users/${username}`, {
       method: "GET",
     }).then((resp) => resp.json());
-    console.log("data get user by id");
-    console.log(data);
+
     setUserInfo(data);
   };
 
@@ -31,8 +30,6 @@ const ProfileRoute = () => {
     const data = await fetch(`${BASE_URL}users/${username}/posts`, {
       method: "GET",
     }).then((resp) => resp.json());
-    console.log("data get user post");
-    console.log(data);
     setUserPost(data);
   };
 
@@ -43,7 +40,6 @@ const ProfileRoute = () => {
         name={userInfo.name}
         username={userInfo.username}
       />
-      {/* <UserPosts posts={userPost} /> */}
       <UserPosts posts={userPost} user={userInfo} />
     </div>
   );

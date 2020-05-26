@@ -8,9 +8,6 @@ import Loading from "../../components/Loading";
 const UserPosts = ({ posts, user }) => {
   return (
     <div className="container" data-testid="user-posts">
-      {console.log("posts user component")}
-      {console.log(posts)}
-
       {posts.length > 0 ? (
         posts.map((post) => (
           <Post key={post.id} postInfo={post} userInfo={user} />

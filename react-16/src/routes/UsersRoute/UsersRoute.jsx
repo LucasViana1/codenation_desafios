@@ -8,17 +8,13 @@ const UsersRoute = () => {
 
   useEffect(() => {
     getUsers();
-    // console.log("resp req users");
-    // console.log(users);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getUsers = async () => {
     const data = await fetch(BASE_URL + "users", {
       method: "GET",
     }).then((resp) => resp.json());
-    console.log("data");
-    console.log(data);
+
     setUsers(data);
   };
 
