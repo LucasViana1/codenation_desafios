@@ -7,9 +7,6 @@ import "./UserPosts.scss";
 const UserPosts = ({ posts }) => {
   return (
     <div className="container" data-testid="user-posts">
-      {console.log("posts user component")}
-      {console.log(posts)}
-      {/* SERA UM ARRAY FUTURAMENTE */}
       <Post postInfo={posts} userInfo={{}} />
     </div>
   );

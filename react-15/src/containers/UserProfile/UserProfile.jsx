@@ -16,9 +16,6 @@ const UserProfile = ({ avatar, name, username }) => {
           </div>
         </div>
       </div>
-      {console.log(avatar)}
-      {console.log(name)}
-      {console.log(username)}
     </section>
   );
 };
