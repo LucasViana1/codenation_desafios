@@ -1,1 +1,4 @@
-v12.10.0
+
+> react-spotify@0.1.0 submit C:\Users\Lucas Viana\codenation\react-17
+> react-scripts test src/__tests__/validation.spec.js --reporters=default --reporters=jest-junit "--watchAll=false"
+

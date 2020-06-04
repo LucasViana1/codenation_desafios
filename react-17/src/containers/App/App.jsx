@@ -11,7 +11,7 @@ import { store, persistor } from "../../store";
 const App = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <main className="app">
+      <main className="app" data-testid="app">
         <BrowserRouter>
           <Routes />
         </BrowserRouter>

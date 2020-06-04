@@ -8,7 +8,7 @@ import { Logo } from "../../components";
 const Login = () => {
   const { url } = endpoints.getAuthorization;
   return (
-    <main className="login">
+    <main className="login" data-testid="login">
       <section className="container">
         <Logo />
         <p className="login__microcopy">
