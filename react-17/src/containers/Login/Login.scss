@@ -8,6 +8,11 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  background-image: url('../../assets/images/app-intro-1.jpg');
+
+  @media screen and (min-width: 768px) {
+    background-image: url('../../assets/images/app-intro-2.jpg');
+  }
 
   &:after,
   &:before {

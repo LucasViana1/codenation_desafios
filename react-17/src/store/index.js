@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import appReducers from "../reducers";
+import reducers from "../reducers";
 import UserConstants from "../constants/user";
 
 const rootReducer = (state, action) => {
@@ -10,7 +10,7 @@ const rootReducer = (state, action) => {
     state = undefined;
   }
 
-  return appReducers(state, action);
+  return reducers(state, action);
 };
 
 const persistConfig = {
